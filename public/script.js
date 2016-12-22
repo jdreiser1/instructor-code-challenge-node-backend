@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(evt){//Waits for the HTML
 		let movieSubmission = evt.target.elements[0].value //Grabs the movie submitted in the input box
 		
 		//A "GET" request is sent to the omdbapi and recieved again as a response
-		Request('GET', `http://www.omdbapi.com/?s=${movieSubmission}&type=movie&r=json`, (response) => {
+		Request('GET', `https://www.omdbapi.com/?s=${movieSubmission}&type=movie&r=json`, (response) => {
 					//the response is iterated through and used to create HTML elements
 					response.Search.forEach(function(movie){  
 
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function(evt){//Waits for the HTML
 		self.removeEventListener("click", showDescription)
 
 		//A "GET" request is sent to the omdbapi and recieved as a response
-		Request('GET', `http://www.omdbapi.com/?t=${self.textContent}&plot=full&r=json`, (response) => {
+		Request('GET', `https://www.omdbapi.com/?t=${self.textContent}&plot=full&r=json`, (response) => {
 
 				//a p element is created, innerHTML and eventListener is added which alters display 
 				let p = document.createElement("p")
