@@ -1,0 +1,51 @@
+body {
+	background: black;
+	font: white;
+	margin: 0;
+}
+img{
+	float: right;
+}
+button{
+	cursor: pointer;
+}
+#header {
+	border: 0;
+	padding: 10px; 
+	height: 60px;
+	font-size: 40px;
+	border-bottom: 1px solid black;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: white;
+}
+#header input{
+	font-size: 30px;
+}
+#container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#movieList{
+	max-width: 33%;
+	color: white;
+	background: rgba(0,0,0,0.5);
+
+}
+#movieList > h4{
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
+#favorites{
+	float: right;
+	font-size: 200%;
+	color: white;
+}
+#favorites > h3{
+	cursor: pointer;
+	color: blue;
+	text-decoration: underline;
+}
