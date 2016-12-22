@@ -4,6 +4,8 @@ var fs = require('fs');
 var path = require('path');
 var bodyParser = require('body-parser')
 
+var port = process.env.PORT || 3000
+
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
@@ -27,6 +29,6 @@ app.post('/api/favorites', function(req, res){
 }
 });
 
-app.listen(3000, function(){
+app.listen(port, function(){
   console.log("Listening on port 3000");
 });
