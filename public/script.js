@@ -39,8 +39,9 @@ document.addEventListener("DOMContentLoaded", function(evt){//Waits for the HTML
 
 
 	function displayFavorites(){
-		//The EventListener on the favorites heading is removed
+		//The EventListener on the favorites heading is removed and the favorites are cleared
 		favorites.removeEventListener("click", displayFavorites)
+		favorites.innerHTML = "<h3>Display Favorites<h3>"
 
 		//a "GET" request is sent to the backend and recieved as a response
 		Request('GET', '/api/favorites', (response) =>
@@ -62,11 +63,11 @@ document.addEventListener("DOMContentLoaded", function(evt){//Waits for the HTML
 
 
 	function addToFavorites(){
-		//An EventListener is removed to the addToFavorites button
-		this.removeEventListener("click", addToFavorites)
 		//A "POST" request is sent to the backend with the JSON data as an object
 		Request('POST', '/api/favorites', (response) => {
 		}, JSON.stringify({"name": this.getAttribute("data-movie")}))
+
+		//The display favorites function is executed
 		displayFavorites();
 
 	};
